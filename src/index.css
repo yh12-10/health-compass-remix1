@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Medical Symptom Checker Design System
+   Clean, trustworthy healthcare aesthetic with soft blues and teals
+*/
+
+@layer base {
+  :root {
+    /* Core Colors - Medical/Healthcare Theme */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary - Medical Teal */
+    --primary: 173 58% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft Blue */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent - Warm Coral for important actions */
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 173 58% 39%;
+
+    --radius: 0.75rem;
+
+    /* Custom Medical Theme Colors */
+    --medical-teal: 173 58% 39%;
+    --medical-teal-light: 173 50% 94%;
+    --medical-blue: 210 79% 46%;
+    --medical-blue-light: 210 70% 95%;
+    --medical-green: 158 64% 52%;
+    --medical-green-light: 158 60% 94%;
+    --medical-orange: 25 95% 53%;
+    --medical-orange-light: 25 90% 95%;
+    --medical-red: 0 84% 60%;
+    --medical-red-light: 0 80% 95%;
+    --medical-purple: 262 83% 58%;
+    --medical-purple-light: 262 80% 96%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(173 58% 39%) 0%, hsl(210 79% 46%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(158 64% 52%) 0%, hsl(173 58% 39%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
+    --shadow-glow: 0 0 40px -10px hsl(173 58% 39% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 173 58% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 173 58% 39%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 173 58% 45%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 12 76% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 173 58% 45%;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 173 58% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 173 58% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: "Plus Jakarta Sans", "Segoe UI", Tahoma, Arial, sans-serif;
+  }
+
+  [dir="rtl"] .text-start {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-end {
+    text-align: left;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-lg border border-border/50 shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-medical-blue bg-clip-text text-transparent;
+  }
+
+  .medical-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .medical-badge-success {
+    @apply medical-badge bg-medical-green-light text-medical-green;
+  }
+
+  .medical-badge-warning {
+    @apply medical-badge bg-medical-orange-light text-medical-orange;
+  }
+
+  .medical-badge-danger {
+    @apply medical-badge bg-medical-red-light text-medical-red;
+  }
+
+  .medical-badge-info {
+    @apply medical-badge bg-medical-blue-light text-medical-blue;
+  }
+
+  .progress-ring {
+    @apply relative flex items-center justify-center;
+  }
+
+  .step-indicator {
+    @apply flex items-center justify-center w-10 h-10 rounded-full border-2 text-sm font-semibold transition-all duration-300;
+  }
+
+  .step-indicator-active {
+    @apply step-indicator border-primary bg-primary text-primary-foreground;
+  }
+
+  .step-indicator-completed {
+    @apply step-indicator border-medical-green bg-medical-green text-white;
+  }
+
+  .step-indicator-pending {
+    @apply step-indicator border-muted-foreground/30 text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+}

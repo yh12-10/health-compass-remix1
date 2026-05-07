@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables - NEVER commit these!
+.env
+.env.local
+.env.development
+.env.production
+.env*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Supabase local config (contains project ID)
+.supabase
+supabase/.temp
+
+# Generated SQL data files (too large for git, run generate-sql.mjs to recreate)
+full_diseases.sql
+full_medicines.sql
+full_providers.sql
+
+# Utility scripts
+generate-sql.mjs
+inspect-excel.mjs

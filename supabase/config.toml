@@ -1,0 +1,7 @@
+project_id = "your-project-id"
+
+[functions.analyze-symptoms]
+verify_jwt = false
+
+[functions.translate-results]
+verify_jwt = false
